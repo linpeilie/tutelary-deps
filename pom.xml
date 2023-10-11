@@ -12,6 +12,8 @@
     <description>The Tutelary dependency package</description>
     <modules>
         <module>tutelary-repackage-logger</module>
+        <module>tutelary-auto-generate-processor</module>
+        <module>tutelary-annotation</module>
     </modules>
 
     <properties>
@@ -23,6 +25,8 @@
         <tutelary.deps.package>cn.easii.tutelary.deps</tutelary.deps.package>
         <slf4j-api.version>1.7.36</slf4j-api.version>
         <logback.version>1.2.11</logback.version>
+        <javapoet.version>1.13.0</javapoet.version>
+        <auto-service.version>1.1.1</auto-service.version>
     </properties>
 
     <profiles>
@@ -189,6 +193,11 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>cn.easii</groupId>
+                <artifactId>tutelary-annotation</artifactId>
+                <version>${tutelary-deps.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
                 <version>${slf4j-api.version}</version>
@@ -202,6 +211,18 @@
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-core</artifactId>
                 <version>${logback.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.squareup</groupId>
+                <artifactId>javapoet</artifactId>
+                <version>${javapoet.version}</version>
+                <scope>compile</scope>
+                <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>com.google.auto.service</groupId>
+                <artifactId>auto-service</artifactId>
+                <version>${auto-service.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
