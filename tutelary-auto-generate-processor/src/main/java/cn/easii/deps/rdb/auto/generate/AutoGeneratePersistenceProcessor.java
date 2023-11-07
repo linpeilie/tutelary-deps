@@ -27,7 +27,7 @@ import javax.lang.model.type.TypeMirror;
 @SupportedAnnotationTypes(AutoGeneratePersistenceProcessor.AUTO_PERSISTENCE)
 public class AutoGeneratePersistenceProcessor extends AbstractProcessor {
 
-    public static final String AUTO_PERSISTENCE = "com.tutelary.common.annotation.AutoPersistence";
+    public static final String AUTO_PERSISTENCE = "cn.easii.deps.annotation.AutoPersistence";
 
     private static final String MAPPER_PACKAGE = "com.tutelary.mapper";
 
