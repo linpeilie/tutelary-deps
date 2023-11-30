@@ -29,11 +29,17 @@ public class AutoGeneratePersistenceProcessor extends AbstractProcessor {
 
     public static final String AUTO_PERSISTENCE = "cn.easii.deps.annotation.AutoPersistence";
 
-    private static final String MAPPER_PACKAGE = "com.tutelary.mapper";
+    private static final String BASE_PACKAGE = "cn.easii.tutelary";
 
-    private static final String REPOSITORY_PACKAGE = "com.tutelary.repository";
+    private static final String MAPPER_PACKAGE = BASE_PACKAGE + ".mapper";
 
-    private static final String REPOSITORY_IMPL_PACKAGE = "com.tutelary.repository.impl";
+    private static final String REPOSITORY_PACKAGE = BASE_PACKAGE + ".repository";
+
+    private static final String REPOSITORY_IMPL_PACKAGE = BASE_PACKAGE + ".repository.impl";
+
+    private static final String COMMON_REPOSITORY_PACKAGE = BASE_PACKAGE + ".common.repository";
+
+    private static final String DAO_PACKAGE = BASE_PACKAGE + ".dao";
 
     @Override
     public boolean process(final Set<? extends TypeElement> annotations, final RoundEnvironment roundEnv) {
@@ -98,7 +104,7 @@ public class AutoGeneratePersistenceProcessor extends AbstractProcessor {
 
     private TypeSpec createRepositoryImplTypeSpec(final AutoPersistenceDescriptor descriptor) {
         final ParameterizedTypeName abstractRepository =
-            ParameterizedTypeName.get(ClassName.get("com.tutelary.common.repository", "AbstractRepository"),
+            ParameterizedTypeName.get(ClassName.get(COMMON_REPOSITORY_PACKAGE, "AbstractRepository"),
                 descriptor.getQueryDomainClass(), descriptor.getDomainClass(), descriptor.getEntityClass(),
                 ClassName.get(MAPPER_PACKAGE, descriptor.mapperName()));
         return TypeSpec.classBuilder(descriptor.repositoryImplName())
@@ -111,11 +117,11 @@ public class AutoGeneratePersistenceProcessor extends AbstractProcessor {
 
     private TypeSpec createRepositoryTypeSpec(AutoPersistenceDescriptor descriptor) {
         final ParameterizedTypeName baseRepository =
-            ParameterizedTypeName.get(ClassName.get("com.tutelary.common.repository", "BaseRepository"),
+            ParameterizedTypeName.get(ClassName.get(COMMON_REPOSITORY_PACKAGE, "BaseRepository"),
                 descriptor.getQueryDomainClass(), descriptor.getDomainClass(), descriptor.getEntityClass());
         return TypeSpec.interfaceBuilder(descriptor.repositoryName())
             .addSuperinterface(baseRepository)
-            .addSuperinterface(ClassName.get("com.tutelary.dao", descriptor.daoName()))
+            .addSuperinterface(ClassName.get(DAO_PACKAGE, descriptor.daoName()))
             .addModifiers(Modifier.PUBLIC)
             .build();
     }

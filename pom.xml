@@ -20,7 +20,7 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <tutelary-deps.version>1.0.3</tutelary-deps.version>
+        <tutelary-deps.version>1.0.4</tutelary-deps.version>
         <projectUrl>https://github.com/linpeilie/tutelary-deps.git</projectUrl>
         <tutelary.deps.package>cn.easii.tutelary.deps</tutelary.deps.package>
         <slf4j-api.version>1.7.36</slf4j-api.version>
