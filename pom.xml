@@ -15,19 +15,21 @@
         <module>tutelary-auto-generate-processor</module>
         <module>tutelary-annotation</module>
         <module>tutelary-repackage-javapoet</module>
+        <module>tutelary-repackage-byte-buddy-agent</module>
     </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <tutelary-deps.version>1.0.5</tutelary-deps.version>
+        <tutelary-deps.version>1.0.6</tutelary-deps.version>
         <projectUrl>https://github.com/linpeilie/tutelary-deps.git</projectUrl>
         <tutelary.deps.package>cn.easii.tutelary.deps</tutelary.deps.package>
         <slf4j-api.version>1.7.36</slf4j-api.version>
         <logback.version>1.2.11</logback.version>
         <javapoet.version>1.13.0</javapoet.version>
         <auto-service.version>1.1.1</auto-service.version>
+        <bytebuddy.version>1.18.7</bytebuddy.version>
     </properties>
 
     <profiles>
@@ -282,6 +284,11 @@
                 <groupId>com.google.auto.service</groupId>
                 <artifactId>auto-service</artifactId>
                 <version>${auto-service.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.bytebuddy</groupId>
+                <artifactId>byte-buddy-agent</artifactId>
+                <version>${bytebuddy.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
