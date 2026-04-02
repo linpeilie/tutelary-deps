@@ -11,7 +11,7 @@
     </parent>
 
     <artifactId>tutelary-annotation</artifactId>
-
+    <name>Tutelary Deps Annotation</name>
 
 
 </project>

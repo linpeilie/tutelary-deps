@@ -11,6 +11,7 @@
     </parent>
 
     <artifactId>tutelary-repackage-byte-buddy-agent</artifactId>
+    <name>Tutelary Deps Repackage-Byte-Buddy-Agent</name>
 
     <dependencies>
         <dependency>

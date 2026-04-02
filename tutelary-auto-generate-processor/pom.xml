@@ -11,6 +11,7 @@
     </parent>
 
     <artifactId>tutelary-auto-generate-processor</artifactId>
+    <name>Tutelary Deps Auto-Generate-Processor</name>
 
     <dependencies>
         <dependency>

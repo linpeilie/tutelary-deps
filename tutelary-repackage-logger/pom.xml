@@ -11,6 +11,7 @@
     </parent>
 
     <artifactId>tutelary-repackage-logger</artifactId>
+    <name>Tutelary Deps Repackage-Logger</name>
 
     <dependencies>
         <dependency>

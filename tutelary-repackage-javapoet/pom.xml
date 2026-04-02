@@ -11,6 +11,7 @@
     </parent>
 
     <artifactId>tutelary-repackage-javapoet</artifactId>
+    <name>Tutelary Deps Repackage-Javapoet</name>
 
     <dependencies>
         <dependency>
