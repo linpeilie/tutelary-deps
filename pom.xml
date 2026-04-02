@@ -245,13 +245,6 @@
         <developerConnection>${projectUrl}</developerConnection>
         <url>${projectUrl}</url>
     </scm>
-    <distributionManagement>
-        <!-- Central Repository -->
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
 
     <dependencyManagement>
         <dependencies>
